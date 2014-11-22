@@ -26,14 +26,24 @@ public class StudentDao {
 	    
 	    try {
 	      return sqlSession.selectOne(
-	        "                   " 
+	        "java02.test19.server.StudentDao.selectOne", 
 	        no);
 	    } finally {
 	      sqlSession.close();
 	    }
 	}
 
-	
+	public void update(Student student) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			sqlSession.update(
+		   "java02.test19.server.StudentDao.update", student);
+		sqlSession.commit();	
+		} finally {
+			sqlSession.close();
+		}
+	 
+	}
 	
 
 }
