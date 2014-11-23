@@ -28,7 +28,7 @@ public class StudentDao {
 	    
 	    try {
 	      return sqlSession.selectOne(
-	        "java02.test19.server.StudentDao.selectOne", no); 
+	        "java63.servlets.test04.dao.StudentDao.selectOne", no); 
 	    } finally {
 	      sqlSession.close();
 	    }
@@ -38,7 +38,7 @@ public class StudentDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
 			sqlSession.update(
-		   "java02.test19.server.StudentDao.update", student);
+		   "java63.servlets.test04.dao.StudentDao.update", student);
 		sqlSession.commit();	
 		} finally {
 			sqlSession.close();
@@ -50,7 +50,7 @@ public class StudentDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
 			sqlSession.delete(
-			"java02.test19.server.StudentDao.delete", no);
+			"java63.servlets.test04.dao.StudentDao.delete", no);
 			sqlSession.commit();
 		} finally {
 			sqlSession.close();
@@ -66,7 +66,7 @@ public class StudentDao {
 		
 		try {
 			return sqlSession.selectList(
-			"java02.test19.server.StudentDao.selectList",
+			"java63.servlets.test04.dao.StudentDao.selectList",
 			paramMap);
 		} finally {
 			sqlSession.close();
@@ -78,7 +78,7 @@ public class StudentDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
 			sqlSession.insert(
-					"java02.test19.server.Student.insert", student);
+					"java63.servlets.test04.dao.StudentDao.insert", student);
 		} finally {
 			sqlSession.close();
 		}
